@@ -1,0 +1,74 @@
+@use 'variable';
+@use 'mixin';
+
+.flex {
+    display: flex;
+}
+
+.header {
+    height: 100px;
+    width: 400px;
+    background-color: variable.$navy;
+    justify-content: flex-end;
+
+    &_list{
+        display: flex;
+        list-style: none;
+        background-color: variable.$white;
+        margin-top: 20px;
+        margin-right: 20px;
+        padding-left: 0;
+
+        &_block{
+            height: 40px;
+            width: 40px;
+            margin: 10px 10px;
+
+            @include mixin.block_color;
+        }
+    }
+}
+
+.sidebar {
+
+    &_block{
+        height: 250px;
+        width: 150px;
+        background-color: variable.$green;
+        margin: 0px;
+    }
+}
+
+.main {
+    height: 250px;
+    width: 250px;
+    background-color: variable.$red;
+
+    &_list{
+        display: flex;
+        list-style: none;
+        padding: 0px;
+        margin: 10px auto auto 40px;
+
+        &:first-child {
+            margin-top: 40px;
+        }
+
+        &_block {
+            height: 40px;
+            width: 140px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: variable.$white;
+            margin: 0px;
+            @include mixin.block_color;
+        }
+    }
+}
+
+.footer {
+    height: 100px;
+    width: 400px;
+    background-color: variable.$brown;
+    margin: 0px;
+}
