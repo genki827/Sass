@@ -1,0 +1,11 @@
+@use 'variable';
+
+@mixin block_color {
+    @each $i in variable.$classNames{
+        $index_key: index(variable.$classNames,$i);
+
+        &.#{nth(variable.$classNames,$index_key)} {
+            background-color: nth(variable.$buttonColor,$index_key);
+        }
+    }
+}
